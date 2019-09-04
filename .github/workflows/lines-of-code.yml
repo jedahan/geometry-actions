@@ -6,10 +6,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
     - name: count with tokei
-      run: |
-        cargo install tokei
-        tokei
+      run: docker run -v $PWD:/data:ro mbologna/docker-tokei tokei -t=Zsh | grep '^ Zsh' | awk '{print $4 " lines of zsh"}'
