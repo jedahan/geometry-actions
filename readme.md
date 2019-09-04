@@ -1,5 +1,7 @@
 # geometry
 
+we now have actions?
+
 ![geometry](images/branding/readme-logo.png)
 
 > a minimalistic, fully customizable zsh prompt theme
