@@ -1,0 +1,15 @@
+name: lines-of-code
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: count with tokei
+      run: |
+        cargo install tokei
+        tokei
