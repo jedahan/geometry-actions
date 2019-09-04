@@ -10,4 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: count with tokei
-      run: docker run -v $PWD:/data:ro mbologna/docker-tokei tokei -t=Zsh | grep '^ Zsh' | awk '{print $4 " lines of zsh"}'
+      uses: docker://mbologna/docker-tokei
+      run: |
+        ls
+        echo $PWD
+        tokei -t=Zsh | grep '^ Zsh' | awk '{print $4 " lines of zsh"}'
